@@ -12,4 +12,6 @@ app.use(express.json()); //convert to useable format(parse)
 app.use(express.urlencoded({extended:false}));
 
 app.use('/api/products' , require("./routes/productRoutes"));
+app.use('/api/users' , require("./routes/userRoutes"));
+
 app.listen(port, () => console.log(`Server started on port ${port}`));

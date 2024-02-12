@@ -1,6 +1,13 @@
 const mongoose = require("mongoose")
 const productSchema = mongoose.Schema(
     {
+        //to connect with the user
+        user:{
+            type: mongoose.Schema.Types.ObjectId, //type is mongodb's id
+            required: true,
+            ref: 'User',
+        },
+
         title:{
             type:String,
             required:[true,"title required"]
@@ -18,4 +25,4 @@ const productSchema = mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Product',productSchema);
+module.exports = mongoose.model("Product",productSchema);
